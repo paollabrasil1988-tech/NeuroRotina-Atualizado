@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:v="clr-namespace:NeuroRotina.Views"
+    x:Class="NeuroRotina.Views.AtividadePage"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="{StaticResource NeuroFundo}">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <v:CabecalhoView Grid.Row="0" Titulo="Nova Atividade" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout
+                Padding="28,20"
+                Spacing="10">
+
+                <Label Text="Rotina" Style="{StaticResource Rotulo}" />
+                <Label
+                    x:Name="lblRotina"
+                    Text="Rotina"
+                    FontSize="22"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource NeuroTexto}"
+                    Margin="4,0,0,0" />
+
+                <Label Text="Descrição da Atividade" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <Editor
+                        x:Name="txtDescricao"
+                        Placeholder="Descreva a atividade"
+                        HeightRequest="140" />
+                </Border>
+
+                <Button
+                    Text="Salvar"
+                    Style="{StaticResource BotaoPrimario}"
+                    Margin="0,14,0,0"
+                    Clicked="BtnCadastrar_Clicked" />
+
+                <Label x:Name="lblMensagem" Style="{StaticResource TextoMensagem}" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

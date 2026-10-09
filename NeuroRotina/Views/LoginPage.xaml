@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:v="clr-namespace:NeuroRotina.Views"
+    x:Class="NeuroRotina.Views.LoginPage"
+    Title="LOGIN"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="{StaticResource NeuroFundo}">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Topo azul com o ESPAÇO DO LOGO -->
+        <VerticalStackLayout
+            Grid.Row="0"
+            BackgroundColor="{StaticResource NeuroAzul}"
+            Padding="20,36,20,26"
+            Spacing="14">
+
+            <v:LogoView
+                Tamanho="150"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="NeuroRotina"
+                Style="{StaticResource TituloPagina}"
+                FontSize="32" />
+
+        </VerticalStackLayout>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout
+                Padding="28,26"
+                Spacing="14">
+
+                <Label
+                    Text="Login do adulto"
+                    Style="{StaticResource Rotulo}"
+                    FontSize="22"
+                    HorizontalOptions="Center" />
+
+                <Border Style="{StaticResource Campo}">
+                    <Entry
+                        x:Name="txtEmail"
+                        Placeholder="E-mail"
+                        Keyboard="Email" />
+                </Border>
+
+                <Border Style="{StaticResource Campo}">
+                    <Entry
+                        x:Name="txtSenha"
+                        Placeholder="Senha"
+                        IsPassword="True" />
+                </Border>
+
+                <Button
+                    Text="Entrar"
+                    Style="{StaticResource BotaoPrimario}"
+                    Clicked="BtnEntrar_Clicked" />
+
+                <Button
+                    Text="Criar conta"
+                    Style="{StaticResource BotaoSecundario}"
+                    Clicked="BtnCriarConta_Clicked" />
+
+                <Label
+                    Text="ou"
+                    Style="{StaticResource TextoCorpo}"
+                    HorizontalOptions="Center" />
+
+                <Button
+                    Text="Entrar como criança"
+                    Style="{StaticResource BotaoDestaque}"
+                    Clicked="BtnEntrarComoCrianca_Clicked" />
+
+                <Label
+                    x:Name="lblMensagem"
+                    Style="{StaticResource TextoMensagem}" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Tema NeuroRotina: cores e estilos tirados do protótipo do Figma -->
+
+    <Color x:Key="NeuroAzul">#317597</Color>
+    <Color x:Key="NeuroAzulEscuro">#245A75</Color>
+    <Color x:Key="NeuroAzulClaro">#3B9AD9</Color>
+    <Color x:Key="NeuroFundo">#D9D9D9</Color>
+    <Color x:Key="NeuroTexto">#1F1F1F</Color>
+    <Color x:Key="NeuroBorda">#BDBDBD</Color>
+    <Color x:Key="NeuroVerde">#009C6E</Color>
+    <Color x:Key="NeuroVermelho">#C62828</Color>
+
+    <!-- Cores das Necessidades -->
+    <Color x:Key="CorAgua">#006ED4</Color>
+    <Color x:Key="CorBanheiro">#FF0000</Color>
+    <Color x:Key="CorBrincar">#FFCC00</Color>
+    <Color x:Key="CorComer">#009C6E</Color>
+
+    <!-- Fonte serifada dos títulos (Figma). Usa a fonte serifada do próprio aparelho. -->
+    <OnPlatform x:Key="FonteTitulo" x:TypeArguments="x:String">
+        <On Platform="Android" Value="serif" />
+        <On Platform="iOS, MacCatalyst, WinUI" Value="Georgia" />
+    </OnPlatform>
+
+    <!-- Textos -->
+    <Style x:Key="TituloPagina" TargetType="Label">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontFamily" Value="{StaticResource FonteTitulo}" />
+        <Setter Property="FontSize" Value="28" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style x:Key="Rotulo" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource NeuroAzul}" />
+        <Setter Property="FontFamily" Value="{StaticResource FonteTitulo}" />
+        <Setter Property="FontSize" Value="19" />
+        <Setter Property="Margin" Value="4,8,0,0" />
+    </Style>
+
+    <Style x:Key="TextoCorpo" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource NeuroTexto}" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+
+    <Style x:Key="TextoMensagem" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource NeuroVermelho}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+    </Style>
+
+    <!-- Campo branco arredondado (envolve Entry, Picker, TimePicker, DatePicker, Editor) -->
+    <Style x:Key="Campo" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="Stroke" Value="{StaticResource NeuroBorda}" />
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="Padding" Value="12,0" />
+        <Setter Property="StrokeShape">
+            <Setter.Value>
+                <RoundRectangle CornerRadius="8" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Cartão branco (histórico, rotinas, atividades) -->
+    <Style x:Key="Cartao" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="Stroke" Value="{StaticResource NeuroBorda}" />
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="StrokeShape">
+            <Setter.Value>
+                <RoundRectangle CornerRadius="10" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Cartão grande das Necessidades -->
+    <Style x:Key="CartaoNecessidade" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="StrokeThickness" Value="5" />
+        <Setter Property="Padding" Value="8" />
+        <Setter Property="HeightRequest" Value="165" />
+        <Setter Property="StrokeShape">
+            <Setter.Value>
+                <RoundRectangle CornerRadius="10" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Botões -->
+    <Style x:Key="BotaoPrimario" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource NeuroAzul}" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="HeightRequest" Value="58" />
+        <Setter Property="Padding" Value="14,0" />
+    </Style>
+
+    <Style x:Key="BotaoSecundario" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="{StaticResource NeuroAzul}" />
+        <Setter Property="BorderColor" Value="{StaticResource NeuroAzul}" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="HeightRequest" Value="54" />
+        <Setter Property="Padding" Value="14,0" />
+    </Style>
+
+    <Style x:Key="BotaoDestaque" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource NeuroVerde}" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="HeightRequest" Value="58" />
+        <Setter Property="Padding" Value="14,0" />
+    </Style>
+
+    <Style x:Key="BotaoPerigo" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="{StaticResource NeuroVermelho}" />
+        <Setter Property="BorderColor" Value="{StaticResource NeuroVermelho}" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="HeightRequest" Value="48" />
+        <Setter Property="Padding" Value="14,0" />
+    </Style>
+
+</ResourceDictionary>

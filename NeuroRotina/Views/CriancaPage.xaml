@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:v="clr-namespace:NeuroRotina.Views"
+    x:Class="NeuroRotina.Views.CriancaPage"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="{StaticResource NeuroFundo}">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <v:CabecalhoView Grid.Row="0" Titulo="Cadastro da Criança" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout
+                Padding="28,20"
+                Spacing="10">
+
+                <Label Text="Nome da criança" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <Entry x:Name="txtNome" Placeholder="Nome ou apelido" />
+                </Border>
+
+                <Label Text="Data de nascimento" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <DatePicker x:Name="dtpNascimento" />
+                </Border>
+
+                <Label Text="Nível de suporte" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <Picker
+                        x:Name="pckNivelSuporte"
+                        Title="Selecione o nível de suporte">
+                        <Picker.Items>
+                            <x:String>Nível 1</x:String>
+                            <x:String>Nível 2</x:String>
+                            <x:String>Nível 3</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Border>
+
+                <Label Text="PIN da criança (4 dígitos)" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <Entry
+                        x:Name="txtPin"
+                        Placeholder="Ex: 1234"
+                        Keyboard="Numeric"
+                        MaxLength="4"
+                        IsPassword="True" />
+                </Border>
+
+                <Label Text="Observações" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <Editor
+                        x:Name="txtObservacoes"
+                        Placeholder="Observações"
+                        HeightRequest="120" />
+                </Border>
+
+                <Button
+                    Text="Cadastrar criança"
+                    Style="{StaticResource BotaoPrimario}"
+                    Margin="0,14,0,0"
+                    Clicked="BtnCadastrar_Clicked" />
+
+                <Label x:Name="lblMensagem" Style="{StaticResource TextoMensagem}" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

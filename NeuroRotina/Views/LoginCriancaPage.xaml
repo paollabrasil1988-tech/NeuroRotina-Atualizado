@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:v="clr-namespace:NeuroRotina.Views"
+    x:Class="NeuroRotina.Views.LoginCriancaPage"
+    Title="LOGIN DA CRIANÇA"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="{StaticResource NeuroFundo}">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <v:CabecalhoView Grid.Row="0" Titulo="Login da Criança" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout
+                Padding="28,26"
+                Spacing="14">
+
+                <v:LogoView
+                    Tamanho="120"
+                    HorizontalOptions="Center" />
+
+                <Label Text="Meu nome" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <Entry x:Name="txtNome" Placeholder="Nome ou apelido" />
+                </Border>
+
+                <Label Text="Meu PIN" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <Entry
+                        x:Name="txtPin"
+                        Placeholder="PIN de 4 dígitos"
+                        Keyboard="Numeric"
+                        MaxLength="4"
+                        IsPassword="True" />
+                </Border>
+
+                <Button
+                    Text="Entrar"
+                    Style="{StaticResource BotaoDestaque}"
+                    Margin="0,12,0,0"
+                    Clicked="BtnEntrar_Clicked" />
+
+                <Label x:Name="lblMensagem" Style="{StaticResource TextoMensagem}" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

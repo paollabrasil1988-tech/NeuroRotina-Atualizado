@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:v="clr-namespace:NeuroRotina.Views"
+    x:Class="NeuroRotina.Views.CadastroUsuarioPage"
+    Title="CRIAR CONTA"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="{StaticResource NeuroFundo}">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <v:CabecalhoView Grid.Row="0" Titulo="Criar Conta" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout
+                Padding="28,22"
+                Spacing="12">
+
+                <v:LogoView
+                    Tamanho="100"
+                    HorizontalOptions="Center" />
+
+                <Label Text="Nome completo" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <Entry x:Name="txtNome" Placeholder="Seu nome" />
+                </Border>
+
+                <Label Text="E-mail" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <Entry x:Name="txtEmail" Placeholder="seu@email.com" Keyboard="Email" />
+                </Border>
+
+                <Label Text="Senha" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <Entry x:Name="txtSenha" Placeholder="Senha" IsPassword="True" />
+                </Border>
+
+                <Label Text="Confirmar senha" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <Entry x:Name="txtConfirmarSenha" Placeholder="Repita a senha" IsPassword="True" />
+                </Border>
+
+                <Button
+                    Text="Criar conta"
+                    Style="{StaticResource BotaoPrimario}"
+                    Margin="0,12,0,0"
+                    Clicked="BtnCriarConta_Clicked" />
+
+                <Label x:Name="lblMensagem" Style="{StaticResource TextoMensagem}" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:v="clr-namespace:NeuroRotina.Views"
+    x:Class="NeuroRotina.Views.ListaAtividadesPage"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="{StaticResource NeuroFundo}">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <v:CabecalhoView Grid.Row="0" Titulo="Atividades" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout
+                Padding="24,24"
+                Spacing="14">
+
+                <VerticalStackLayout
+                    x:Name="ListaAtividades"
+                    Spacing="14" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

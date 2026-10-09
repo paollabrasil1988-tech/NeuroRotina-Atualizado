@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:v="clr-namespace:NeuroRotina.Views"
+    x:Class="NeuroRotina.Views.RotinaPage"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="{StaticResource NeuroFundo}">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <v:CabecalhoView
+            x:Name="cabecalho"
+            Grid.Row="0"
+            Titulo="Nova Rotina" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout
+                Padding="28,20"
+                Spacing="10">
+
+                <Label Text="Título da Rotina" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <Entry
+                        x:Name="txtTitulo"
+                        Placeholder="Ex: Banho e Café da Manhã" />
+                </Border>
+
+                <Label Text="Horário de Início" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <TimePicker
+                        x:Name="tpHorario"
+                        Format="HH:mm"
+                        Time="08:00:00" />
+                </Border>
+
+                <Label Text="Dias da Semana" Style="{StaticResource Rotulo}" />
+                <Grid
+                    x:Name="gridDias"
+                    ColumnDefinitions="*,*,*,*,*,*,*"
+                    ColumnSpacing="6" />
+
+                <Grid
+                    ColumnDefinitions="*,Auto"
+                    Margin="4,10,0,0">
+                    <Label
+                        Text="Tocar alerta no horário"
+                        Style="{StaticResource Rotulo}"
+                        Margin="0"
+                        VerticalOptions="Center" />
+                    <Switch
+                        x:Name="swAlerta"
+                        Grid.Column="1"
+                        IsToggled="True"
+                        OnColor="{StaticResource NeuroAzul}"
+                        ThumbColor="White" />
+                </Grid>
+
+                <Label Text="Som do Alerta" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <Picker
+                        x:Name="pckSom"
+                        Title="Escolha o som">
+                        <Picker.Items>
+                            <x:String>Alarme (toque forte)</x:String>
+                            <x:String>Aviso suave</x:String>
+                            <x:String>Só vibrar</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Border>
+
+                <Label Text="Descrição da Atividade" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <Editor
+                        x:Name="txtDescricao"
+                        HeightRequest="140" />
+                </Border>
+
+                <Button
+                    x:Name="btnSalvar"
+                    Text="Salvar"
+                    Style="{StaticResource BotaoPrimario}"
+                    Margin="0,14,0,0"
+                    Clicked="BtnCadastrar_Clicked" />
+
+                <Button
+                    Text="Ver minhas rotinas"
+                    Style="{StaticResource BotaoSecundario}"
+                    Clicked="BtnVerRotinas_Clicked" />
+
+                <Label x:Name="lblMensagem" Style="{StaticResource TextoMensagem}" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

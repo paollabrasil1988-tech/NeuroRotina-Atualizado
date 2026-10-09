@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:v="clr-namespace:NeuroRotina.Views"
+    x:Class="NeuroRotina.Views.HistoricoPage"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="{StaticResource NeuroFundo}">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+
+        <v:CabecalhoView Grid.Row="0" Titulo="Histórico Diário" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout
+                Padding="24,24"
+                Spacing="16">
+
+                <VerticalStackLayout
+                    x:Name="ListaRegistros"
+                    Spacing="16" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Button
+            Grid.Row="2"
+            Text="Novo registro"
+            Style="{StaticResource BotaoPrimario}"
+            Margin="24,8,24,20"
+            Clicked="BtnNovoRegistro_Clicked" />
+
+    </Grid>
+
+</ContentPage>

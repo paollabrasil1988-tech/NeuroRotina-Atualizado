@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:v="clr-namespace:NeuroRotina.Views"
+    x:Class="NeuroRotina.Views.RegistroDiarioPage"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="{StaticResource NeuroFundo}">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <v:CabecalhoView Grid.Row="0" Titulo="Novo Registro" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout
+                Padding="28,20"
+                Spacing="10">
+
+                <Label Text="Data" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <DatePicker
+                        x:Name="dtpData"
+                        Format="dd/MM/yyyy"
+                        DateSelected="DtpData_DateSelected" />
+                </Border>
+
+                <Label Text="Comportamento" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <Picker
+                        x:Name="pckComportamento"
+                        Title="Como a criança estava?">
+                        <Picker.Items>
+                            <x:String>Calmo e Interativo</x:String>
+                            <x:String>Calmo e Quieto</x:String>
+                            <x:String>Agitado</x:String>
+                            <x:String>Ansioso</x:String>
+                            <x:String>Irritado</x:String>
+                            <x:String>Cansado</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Border>
+
+                <Label Text="Observação" Style="{StaticResource Rotulo}" />
+                <Border Style="{StaticResource Campo}">
+                    <Editor
+                        x:Name="txtObservacao"
+                        Placeholder="Escreva como foi o dia"
+                        HeightRequest="200" />
+                </Border>
+
+                <Label
+                    Text="O texto acima já vem com o resumo do uso da prancha de comunicação, se houver. Você pode editar."
+                    FontSize="13"
+                    TextColor="Gray" />
+
+                <Button
+                    Text="Salvar"
+                    Style="{StaticResource BotaoPrimario}"
+                    Margin="0,14,0,0"
+                    Clicked="BtnSalvar_Clicked" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

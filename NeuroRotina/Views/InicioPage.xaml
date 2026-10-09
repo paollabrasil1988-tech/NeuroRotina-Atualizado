@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:v="clr-namespace:NeuroRotina.Views"
+    x:Class="NeuroRotina.Views.InicioPage"
+    Title="INÍCIO"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="{StaticResource NeuroFundo}">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <v:CabecalhoView
+            Grid.Row="0"
+            Titulo="Área do Adulto"
+            MostrarVoltar="False" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout
+                Padding="28,30"
+                Spacing="18">
+
+                <Label
+                    x:Name="lblBoasVindas"
+                    Style="{StaticResource Rotulo}"
+                    FontSize="22"
+                    HorizontalOptions="Center" />
+
+                <Button
+                    Text="Minhas crianças"
+                    Style="{StaticResource BotaoPrimario}"
+                    HeightRequest="76"
+                    Clicked="BtnMinhasCriancas_Clicked" />
+
+                <Button
+                    Text="Cadastrar criança"
+                    Style="{StaticResource BotaoPrimario}"
+                    HeightRequest="76"
+                    Clicked="BtnCadastrarCrianca_Clicked" />
+
+                <Button
+                    Text="Configurações"
+                    Style="{StaticResource BotaoSecundario}"
+                    HeightRequest="66"
+                    Clicked="BtnConfiguracoes_Clicked" />
+
+                <Button
+                    Text="Sair"
+                    Style="{StaticResource BotaoPerigo}"
+                    Margin="0,24,0,0"
+                    Clicked="BtnSair_Clicked" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:v="clr-namespace:NeuroRotina.Views"
+    x:Class="NeuroRotina.Views.NecessidadesPage"
+    Title="COMUNICAÇÃO"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="{StaticResource NeuroFundo}">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <v:CabecalhoView Grid.Row="0" Titulo="Comunicação" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout
+                Padding="28,26"
+                Spacing="22">
+
+                <!-- Quatro cartões grandes: imagem + palavra + voz ao tocar -->
+                <Grid
+                    ColumnDefinitions="*,*"
+                    RowDefinitions="Auto,Auto"
+                    ColumnSpacing="16"
+                    RowSpacing="16">
+
+                    <Border
+                        x:Name="cartaoAgua"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Style="{StaticResource CartaoNecessidade}"
+                        Stroke="{StaticResource CorAgua}"
+                        SemanticProperties.Description="Água">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Necessidade_Tapped" CommandParameter="agua" />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Image Source="ic_agua.png" WidthRequest="90" HeightRequest="90" />
+                            <Label Text="ÁGUA" TextColor="{StaticResource CorAgua}" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border
+                        x:Name="cartaoBanheiro"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Style="{StaticResource CartaoNecessidade}"
+                        Stroke="{StaticResource CorBanheiro}"
+                        SemanticProperties.Description="Banheiro">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Necessidade_Tapped" CommandParameter="banheiro" />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Image Source="ic_banheiro.png" WidthRequest="90" HeightRequest="90" />
+                            <Label Text="BANHEIRO" TextColor="{StaticResource CorBanheiro}" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border
+                        x:Name="cartaoBrincar"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Style="{StaticResource CartaoNecessidade}"
+                        Stroke="{StaticResource CorBrincar}"
+                        SemanticProperties.Description="Brincar">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Necessidade_Tapped" CommandParameter="brincar" />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Image Source="ic_brincar.png" WidthRequest="90" HeightRequest="90" />
+                            <Label Text="BRINCAR" TextColor="{StaticResource CorBrincar}" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border
+                        x:Name="cartaoComer"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Style="{StaticResource CartaoNecessidade}"
+                        Stroke="{StaticResource CorComer}"
+                        SemanticProperties.Description="Comer">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Necessidade_Tapped" CommandParameter="comer" />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="6">
+                            <Image Source="ic_comer.png" WidthRequest="90" HeightRequest="90" />
+                            <Label Text="COMER" TextColor="{StaticResource CorComer}" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                </Grid>
+
+                <Label
+                    x:Name="lblConfirmacao"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource NeuroAzul}"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    HeightRequest="36" />
+
+                <Button
+                    Text="Ajuda"
+                    Style="{StaticResource BotaoPrimario}"
+                    Clicked="BtnAjuda_Clicked" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>
