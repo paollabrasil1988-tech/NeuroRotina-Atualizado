@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:v="clr-namespace:NeuroRotina.Views"
     x:Class="NeuroRotina.Views.LoginPage"
     Title="LOGIN"
     Shell.NavBarIsVisible="False"
@@ -11,24 +8,29 @@
 
     <Grid RowDefinitions="Auto,*">
 
-        <!-- Topo azul com o ESPAÇO DO LOGO -->
+        <!-- Topo azul com o logo -->
         <VerticalStackLayout
             Grid.Row="0"
             BackgroundColor="{StaticResource NeuroAzul}"
-            Padding="20,36,20,26"
-            Spacing="14">
+            Padding="20,24,20,24"
+            Spacing="10">
 
-            <v:LogoView
-                Tamanho="150"
+            <Image
+                Source="logo.png"
+                HeightRequest="120"
+                WidthRequest="180"
+                Aspect="AspectFit"
                 HorizontalOptions="Center" />
 
             <Label
                 Text="NeuroRotina"
                 Style="{StaticResource TituloPagina}"
-                FontSize="32" />
+                FontSize="32"
+                HorizontalOptions="Center" />
 
         </VerticalStackLayout>
 
+        <!-- Campos de login -->
         <ScrollView Grid.Row="1">
             <VerticalStackLayout
                 Padding="28,26"

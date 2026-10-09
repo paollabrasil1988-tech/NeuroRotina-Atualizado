@@ -30,13 +30,15 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<MauiIcon Include="Resources\AppIcon\appicon.svg"
-				  ForegroundFile="Resources\AppIcon\appiconfg.svg"
-				  Color="#317597" />
+		<MauiIcon
+		  Include="Resources\AppIcon\appicon.svg"
+		  ForegroundFile="Resources\AppIcon\appiconfg.svg"
+		  Color="#317597" />
 
-		<MauiSplashScreen Include="Resources\Splash\splash.svg"
-						  Color="#317597"
-						  BaseSize="128,128" />
+		<MauiSplashScreen
+		  Include="Resources\Splash\splash.svg"
+		  Color="#317597"
+		  BaseSize="128,128" />
 
 		<MauiImage Include="Resources\Images\*" />
 

@@ -1,3 +1,4 @@
+
 using NeuroRotina.Data;
 using NeuroRotina.Services;
 
@@ -9,13 +10,15 @@ public partial class App : Application
     {
         InitializeComponent();
 
-        // O design do app (Figma) é claro. Isso evita que o modo escuro do
-        // celular deixe fundos e textos com cores erradas.
+        // Mantém o tema claro, conforme o design do aplicativo.
         UserAppTheme = AppTheme.Light;
 
-        MainPage = new AppShell();
-
         InicializarBanco();
+    }
+
+    protected override Window CreateWindow(IActivationState? activationState)
+    {
+        return new Window(new AppShell());
     }
 
     private async void InicializarBanco()
@@ -26,12 +29,13 @@ public partial class App : Application
 
             await database.InicializarAsync();
 
-            // Garante que os alertas semanais estejam agendados toda vez que o app abre.
+            // Reagenda os alertas semanais ao iniciar o aplicativo.
             await AlarmeService.ReagendarTodasAsync(database);
         }
         catch (Exception ex)
         {
-            System.Diagnostics.Debug.WriteLine($"Erro ao iniciar o banco: {ex}");
+            System.Diagnostics.Debug.WriteLine(
+                $"Erro ao iniciar o banco: {ex}");
         }
     }
 }
