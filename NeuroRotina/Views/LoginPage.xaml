@@ -17,16 +17,12 @@
 
             <Image
                 Source="logo.png"
-                HeightRequest="120"
-                WidthRequest="180"
+                HeightRequest="200"
+                WidthRequest="200"
                 Aspect="AspectFit"
                 HorizontalOptions="Center" />
 
-            <Label
-                Text="NeuroRotina"
-                Style="{StaticResource TituloPagina}"
-                FontSize="32"
-                HorizontalOptions="Center" />
+           
 
         </VerticalStackLayout>
 

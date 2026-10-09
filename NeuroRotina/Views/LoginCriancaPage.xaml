@@ -10,16 +10,47 @@
     BackgroundColor="{StaticResource NeuroFundo}">
 
     <Grid RowDefinitions="Auto,*">
+       
+        <VerticalStackLayout
+            Grid.Row="0"
+            BackgroundColor="{StaticResource NeuroAzul}"
+            Padding="20,24,20,24"
+            Spacing="10">
 
-        <v:CabecalhoView Grid.Row="0" Titulo="Login da Criança" />
+            <!-- Cabeçalho com botão de voltar e logo -->
+            <Grid ColumnDefinitions="Auto, *" VerticalOptions="Center">
+                <Button
+                    x:Name="btnVoltar"
+                    Text="⟵"
+                    FontSize="18"
+                    WidthRequest="44"
+                    HeightRequest="44"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    Clicked="BtnVoltar_Clicked" />
+
+                <Image
+                    Source="logo.png"
+                    HeightRequest="200"
+                    WidthRequest="200"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Center"
+                    Grid.Column="1" />
+            </Grid>
+
+        </VerticalStackLayout>
 
         <ScrollView Grid.Row="1">
             <VerticalStackLayout
                 Padding="28,26"
                 Spacing="14">
 
-                <v:LogoView
-                    Tamanho="120"
+                <Label
+                    Text="Login da criança"
+                    Style="{StaticResource Rotulo}"
+                    FontSize="22"
                     HorizontalOptions="Center" />
 
                 <Label Text="Meu nome" Style="{StaticResource Rotulo}" />
