@@ -18,9 +18,12 @@
                 Padding="28,22"
                 Spacing="12">
 
-                <v:LogoView
-                    Tamanho="100"
-                    HorizontalOptions="Center" />
+                <Image
+                   Source="logo.png"
+                   HeightRequest="200"
+                   WidthRequest="200"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center" />
 
                 <Label Text="Nome completo" Style="{StaticResource Rotulo}" />
                 <Border Style="{StaticResource Campo}">
